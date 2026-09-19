@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Festa e bebidas</title>
+  <desc id="desc">Cena de festa com bebidas, brilho neon e celebração de conveniência.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#101217"/>
+      <stop offset="100%" stop-color="#07090c"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fffef8"/>
+      <stop offset="100%" stop-color="#d7e2f8"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <circle cx="180" cy="190" r="200" fill="#ff9d00" opacity="0.18"/>
+  <circle cx="730" cy="220" r="180" fill="#f0c947" opacity="0.12"/>
+  <g transform="translate(120 120)">
+    <rect x="120" y="720" width="580" height="160" rx="24" fill="#1a1d22"/>
+    <g>
+      <rect x="180" y="440" width="82" height="210" rx="22" fill="url(#glass)" opacity="0.85"/>
+      <rect x="372" y="360" width="82" height="290" rx="22" fill="url(#glass)" opacity="0.9"/>
+      <rect x="562" y="420" width="82" height="230" rx="22" fill="url(#glass)" opacity="0.8"/>
+      <path d="M209 465h22" stroke="#f9b42a" stroke-width="12" stroke-linecap="round"/>
+      <path d="M401 395h22" stroke="#f9b42a" stroke-width="12" stroke-linecap="round"/>
+      <path d="M591 455h22" stroke="#f9b42a" stroke-width="12" stroke-linecap="round"/>
+    </g>
+    <g fill="#f4a500">
+      <circle cx="220" cy="300" r="34"/>
+      <circle cx="400" cy="240" r="44"/>
+      <circle cx="598" cy="290" r="38"/>
+    </g>
+    <g fill="#0e1115">
+      <path d="M120 390h120v130H120z"/><path d="M310 310h130v210H310z"/><path d="M530 360h130v160H530z"/>
+    </g>
+    <g fill="#ffd86a">
+      <circle cx="170" cy="470" r="14"/>
+      <circle cx="260" cy="470" r="14"/>
+      <circle cx="368" cy="380" r="14"/>
+      <circle cx="450" cy="380" r="14"/>
+      <circle cx="582" cy="438" r="14"/>
+      <circle cx="660" cy="438" r="14"/>
+    </g>
+    <path d="M60 760c120-34 218-52 350-52 138 0 228 18 308 52" fill="none" stroke="#ffc94a" stroke-width="18" stroke-linecap="round" opacity="0.7"/>
+  </g>
+</svg>

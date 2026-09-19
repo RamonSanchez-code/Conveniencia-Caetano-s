@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Churrasco na conveniência</title>
+  <desc id="desc">Cena de churrasco e bebidas com amigos em um ambiente de conveniência.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111315"/>
+      <stop offset="100%" stop-color="#090b0d"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#ffcb68" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffac12" stop-opacity="0.1"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <circle cx="460" cy="170" r="240" fill="url(#sun)"/>
+  <g transform="translate(90 110)">
+    <rect x="110" y="630" width="620" height="220" rx="30" fill="#2d2f33"/>
+    <rect x="80" y="660" width="700" height="180" rx="36" fill="#171a1d"/>
+    <path d="M180 660h450l-60 120H240z" fill="#3e4044"/>
+    <rect x="260" y="300" width="300" height="220" rx="40" fill="#14181c"/>
+    <path d="M302 328c42-54 90-82 141-82 53 0 98 28 141 82" fill="none" stroke="#f9d86d" stroke-width="18" stroke-linecap="round"/>
+    <g fill="#f4af1c">
+      <circle cx="318" cy="430" r="26"/>
+      <circle cx="390" cy="404" r="24"/>
+      <circle cx="470" cy="420" r="26"/>
+      <circle cx="528" cy="454" r="24"/>
+    </g>
+    <g fill="#0e1013">
+      <path d="M86 720h112v130H86z"/>
+      <path d="M680 720h112v130H680z"/>
+      <path d="M208 760h104v90H208z"/>
+      <path d="M560 760h104v90H560z"/>
+    </g>
+    <g>
+      <rect x="150" y="450" width="64" height="200" rx="18" fill="#f5b42b"/>
+      <rect x="670" y="450" width="64" height="200" rx="18" fill="#f5b42b"/>
+      <rect x="120" y="515" width="120" height="70" rx="16" fill="#111417"/>
+      <rect x="642" y="515" width="120" height="70" rx="16" fill="#111417"/>
+      <path d="M180 500l-24 56" stroke="#f5c856" stroke-width="14" stroke-linecap="round"/>
+      <path d="M694 500l24 56" stroke="#f5c856" stroke-width="14" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

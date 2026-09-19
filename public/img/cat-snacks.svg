@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Snacks e petiscos</title>
+  <desc id="desc">Ilustração de snacks, amendoim, salgados e petiscos para conveniência.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111315"/>
+      <stop offset="100%" stop-color="#07080a"/>
+    </linearGradient>
+    <linearGradient id="bag" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f6d38a"/>
+      <stop offset="100%" stop-color="#cf8a00"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#bg)"/>
+  <circle cx="760" cy="180" r="170" fill="#f8ae1a" opacity="0.15"/>
+  <g transform="translate(90 120)">
+    <path d="M120 80h440l86 426c11 54-30 103-85 103H165c-55 0-96-49-85-103L120 80z" fill="#202328"/>
+    <path d="M160 130h356l53 298c8 47-26 90-74 90H183c-48 0-82-43-74-90l51-298z" fill="url(#bag)"/>
+    <path d="M191 170h308l32 196H159z" fill="#f5e9c8" opacity="0.72"/>
+    <g fill="#e2a11d" opacity="0.88">
+      <circle cx="236" cy="258" r="28"/>
+      <circle cx="291" cy="245" r="22"/>
+      <circle cx="355" cy="267" r="26"/>
+      <circle cx="415" cy="246" r="24"/>
+      <circle cx="474" cy="268" r="30"/>
+    </g>
+    <g fill="#ba7d11" opacity="0.8">
+      <circle cx="204" cy="314" r="22"/>
+      <circle cx="294" cy="323" r="20"/>
+      <circle cx="366" cy="330" r="24"/>
+      <circle cx="437" cy="313" r="22"/>
+    </g>
+    <path d="M278 510c42 0 74-36 74-80v-15H204v15c0 44 32 80 74 80z" fill="#edc36d" opacity="0.8"/>
+    <path d="M208 522h144" stroke="#f6d993" stroke-width="16" stroke-linecap="round"/>
+    <g transform="translate(550 90)">
+      <rect x="0" y="100" width="140" height="240" rx="20" fill="#14181b"/>
+      <rect x="20" y="10" width="100" height="340" rx="26" fill="#f0a70e"/>
+      <path d="M42 98h56" stroke="#f9e5b0" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="69" cy="286" r="22" fill="#fff4d6" opacity="0.7"/>
+      <circle cx="104" cy="236" r="16" fill="#fff4d6" opacity="0.6"/>
+      <circle cx="39" cy="214" r="18" fill="#fff4d6" opacity="0.6"/>
+    </g>
+  </g>
+</svg>

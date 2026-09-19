@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Cervejas geladas</title>
+  <desc id="desc">Ilustração de garrafas e latas de cerveja em ambiente de conveniência.</desc>
+  <defs>
+    <linearGradient id="bg1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111316"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fedb72"/>
+      <stop offset="100%" stop-color="#f4a802"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#bg1)"/>
+  <g opacity="0.25">
+    <circle cx="170" cy="160" r="140" fill="#f6a500"/>
+    <circle cx="720" cy="760" r="170" fill="#f6a500"/>
+  </g>
+  <g transform="translate(70 130)">
+    <path d="M190 160h185v425c0 94-76 170-170 170h-15c-94 0-170-76-170-170V160h170z" fill="#0e1014"/>
+    <path d="M270 160h260v425c0 107-87 194-194 194h-66c-107 0-194-87-194-194V160h194z" fill="#f0ab12"/>
+    <path d="M230 90h110c18 0 33 15 33 33v37H197v-37c0-18 15-33 33-33z" fill="#f9f5eb"/>
+    <path d="M158 160h375v58H158z" fill="#f5dfab" opacity="0.9"/>
+    <path d="M227 218c90 34 176 52 264 52" fill="none" stroke="#f9eec1" stroke-width="20" stroke-linecap="round" opacity="0.75"/>
+    <path d="M195 214c0-18 15-33 33-33h314c18 0 33 15 33 33v57H195z" fill="#f8d279" opacity="0.7"/>
+    <path d="M267 300h110l-18 189H285z" fill="#fff4d8" opacity="0.7"/>
+    <path d="M344 300h110l18 189h-110z" fill="#fff4d8" opacity="0.7"/>
+    <path d="M174 462h356" stroke="#fff" stroke-width="16" stroke-linecap="round" opacity="0.7"/>
+    <circle cx="613" cy="386" r="110" fill="#0d0d11"/>
+    <path d="M544 386h138v112H544z" fill="#f5a101"/>
+    <path d="M574 336c20-26 44-39 69-39 37 0 66 26 79 64h-148z" fill="#f9f5ee"/>
+    <path d="M588 422h100" stroke="#f9f2d8" stroke-width="12" stroke-linecap="round"/>
+    <path d="M510 530h142" stroke="#f5bd46" stroke-width="20" stroke-linecap="round" opacity="0.8"/>
+    <circle cx="696" cy="577" r="26" fill="#f6a500" opacity="0.8"/>
+  </g>
+</svg>

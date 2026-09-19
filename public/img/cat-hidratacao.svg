@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Hidratação e sucos</title>
+  <desc id="desc">Ilustração de garrafas e embalagens de água, suco e hidratação.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f1115"/>
+      <stop offset="100%" stop-color="#07090c"/>
+    </linearGradient>
+    <linearGradient id="bottle" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#d8edff"/>
+      <stop offset="100%" stop-color="#8db5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#bg)"/>
+  <circle cx="730" cy="200" r="170" fill="#f7ae1d" opacity="0.14"/>
+  <g transform="translate(110 110)">
+    <path d="M170 130h120v58h-120z" fill="#eff5f9"/>
+    <path d="M198 188h64v392c0 74-60 134-134 134h-14c-74 0-134-60-134-134V188h198z" fill="#dfeaf8" opacity="0.8"/>
+    <path d="M308 140h120v52H308z" fill="#f5f8fc"/>
+    <path d="M320 192h96v360c0 88-71 159-159 159h-16c-88 0-159-71-159-159V192h238z" fill="url(#bottle)"/>
+    <path d="M152 236h126" stroke="#f9fbff" stroke-width="12" stroke-linecap="round" opacity="0.75"/>
+    <path d="M150 316h130" stroke="#f9fbff" stroke-width="12" stroke-linecap="round" opacity="0.75"/>
+    <path d="M153 394h124" stroke="#f9fbff" stroke-width="12" stroke-linecap="round" opacity="0.75"/>
+    <g transform="translate(390 90)">
+      <path d="M120 0h120v78H120z" fill="#fff7d6"/>
+      <path d="M148 78h64v420c0 40-33 73-73 73h-14c-40 0-73-33-73-73V78h96z" fill="#f9c64d"/>
+      <path d="M106 136h126" stroke="#fff2c1" stroke-width="12" stroke-linecap="round"/>
+      <path d="M108 222h124" stroke="#fff2c1" stroke-width="12" stroke-linecap="round"/>
+      <path d="M109 310h124" stroke="#fff2c1" stroke-width="12" stroke-linecap="round"/>
+      <circle cx="147" cy="425" r="20" fill="#fff8e6" opacity="0.9"/>
+    </g>
+    <g transform="translate(540 230)">
+      <path d="M0 72h110v210c0 42-34 76-76 76H76c-42 0-76-34-76-76V72z" fill="#eaf5ff"/>
+      <path d="M34 0h42v100H34z" fill="#eff7ff"/>
+      <path d="M30 136h52" stroke="#a4d1ff" stroke-width="12" stroke-linecap="round"/>
+      <path d="M30 186h52" stroke="#a4d1ff" stroke-width="12" stroke-linecap="round"/>
+      <circle cx="56" cy="246" r="16" fill="#f7b11a" opacity="0.8"/>
+    </g>
+    <path d="M110 610c128-26 250-42 366-42 118 0 259 17 332 42" fill="none" stroke="#f6a500" stroke-width="18" stroke-linecap="round" opacity="0.75"/>
+  </g>
+</svg>
