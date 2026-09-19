@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import { Flame } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { usePrefersReducedMotion } from "@/lib/hooks";
@@ -152,13 +151,11 @@ export default function About() {
             data-about-frame
             className="relative h-[420px] overflow-hidden rounded-2xl border border-line lg:h-full lg:min-h-[560px]"
           >
-            <Image
+            <img
               data-about-img
               src="/img/moment-noite.svg"
               alt="Amigos saindo de uma loja de conveniência à noite carregando bebidas geladas"
-              fill
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover will-change-transform"
+              className="h-full w-full object-cover will-change-transform"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-night/90 via-transparent to-night/20" />
             <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">

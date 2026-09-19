@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import { Clock3 } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { usePrefersReducedMotion } from "@/lib/hooks";
@@ -94,14 +93,12 @@ export default function Moments() {
             aria-label={moment.title}
           >
             <div className="absolute inset-0 overflow-hidden">
-              <Image
+              <img
                 data-panel-img
                 src={moment.image}
                 alt={`${moment.title} — ${moment.description}`}
-                fill
-                sizes="100vw"
                 loading="lazy"
-                className="object-cover will-change-transform"
+                className="h-full w-full object-cover will-change-transform"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-night/95 via-night/35 to-night/25" />
             </div>

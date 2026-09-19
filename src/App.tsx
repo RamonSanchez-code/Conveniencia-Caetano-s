@@ -12,7 +12,7 @@ import CTA from "@/components/CTA";
 import Social from "@/components/Social";
 import Footer from "@/components/Footer";
 
-export default function HomePage() {
+export default function App() {
   return (
     <SmoothScroll>
       <div className="grain relative">

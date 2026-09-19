@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import { ArrowUpRight, AtSign } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { usePrefersReducedMotion } from "@/lib/hooks";
@@ -103,13 +102,11 @@ export default function Social() {
               }`}
               aria-label={`Post ilustrativo do Instagram: ${tile.alt}`}
             >
-              <Image
+              <img
                 src={tile.src}
                 alt={tile.alt}
-                fill
-                sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
                 loading="lazy"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-night/25 transition-colors duration-500 group-hover:bg-ember/25" />
               <AtSign className="absolute inset-0 m-auto h-7 w-7 text-bone opacity-0 transition-all duration-500 group-hover:scale-110 group-hover:opacity-100" />

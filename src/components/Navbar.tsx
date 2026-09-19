@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { ArrowUpRight, Menu, X, MapPin } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { brand, units } from "@/data/site";
@@ -20,13 +19,10 @@ export function Logo({ className = "" }: { className?: string }) {
   return (
     <a href="#topo" className={`group flex items-center gap-3 ${className}`} aria-label="Caetano's Conveniência">
       <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border border-line bg-night shadow-[0_0_30px_rgba(255,92,10,0.12)] transition-transform duration-300 group-hover:scale-[1.03]">
-        <Image
+        <img
           src="/img/logo-badge.jpg"
           alt="Logo Caetano's Conveniência"
-          fill
-          priority
-          sizes="56px"
-          className="object-cover"
+          className="h-full w-full object-cover"
         />
       </div>
       <span className="font-display text-[1.15rem] leading-none tracking-[0.06em] text-bone transition-colors duration-300 group-hover:text-ember sm:text-[1.35rem]">

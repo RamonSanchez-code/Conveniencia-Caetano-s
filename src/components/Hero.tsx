@@ -1,14 +1,11 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ArrowDown, ArrowUpRight, MapPin } from "lucide-react";
 import { gsap } from "@/lib/gsap";
 import { useMediaQuery, usePrefersReducedMotion } from "@/lib/hooks";
 import Magnetic from "@/components/Magnetic";
-
-const HeroScene = dynamic(() => import("@/components/three/HeroScene"), { ssr: false });
+import HeroScene from "@/components/three/HeroScene";
 
 export default function Hero() {
   const section = useRef<HTMLElement>(null);
@@ -140,14 +137,10 @@ export default function Hero() {
             data-float-soft
             className="hero-img-mask relative h-[44svh] w-[86vw] mix-blend-screen sm:h-[56svh] sm:w-[70vw] lg:h-[78vh] lg:w-[46vw]"
           >
-            <Image
+            <img
               src="/img/hero-beer.svg"
               alt="Cervejas e garrafas estupidamente geladas com splash dourado, sobre fundo preto"
-              fill
-              priority
-              quality={90}
-              sizes="(min-width: 1024px) 46vw, 86vw"
-              className="object-contain drop-shadow-[0_40px_80px_rgba(255,92,10,0.25)]"
+              className="h-full w-full object-contain drop-shadow-[0_40px_80px_rgba(255,92,10,0.25)]"
             />
           </div>
         </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Image from "next/image";
 import { Clock3, MapPin, Navigation, Phone } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { usePrefersReducedMotion } from "@/lib/hooks";
@@ -253,13 +252,11 @@ export default function Units() {
                 >
                   <div className="flex gap-5 p-5 sm:p-6">
                     <div className="relative hidden h-28 w-24 shrink-0 overflow-hidden rounded-xl sm:block">
-                      <Image
+                      <img
                         src="/img/unidade-fachada.svg"
                         alt={`Fachada ilustrativa da ${unit.name}`}
-                        fill
-                        sizes="96px"
                         loading="lazy"
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-night/60 to-transparent" />
                     </div>

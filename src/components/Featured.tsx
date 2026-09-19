@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import { ArrowRight, ArrowUpRight, ShoppingBag } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { usePrefersReducedMotion } from "@/lib/hooks";
@@ -101,13 +100,11 @@ export default function Featured() {
               key={product.id}
               className="group relative h-[460px] w-[82vw] shrink-0 snap-center overflow-hidden rounded-2xl border border-line bg-graphite sm:w-[420px] lg:h-[520px] lg:w-[460px]"
             >
-              <Image
+              <img
                 src={product.image}
                 alt={`${product.name} — ${product.description}`}
-                fill
-                sizes="(min-width: 1024px) 460px, 82vw"
                 loading="lazy"
-                className={`object-cover transition-transform duration-700 ease-out group-hover:scale-108 ${
+                className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108 ${
                   i === 0 ? "mix-blend-screen" : ""
                 }`}
               />

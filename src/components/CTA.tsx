@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Image from "next/image";
 import { ArrowUpRight, CheckCircle2, Loader2, MessageCircle, PhoneCall } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { usePrefersReducedMotion } from "@/lib/hooks";
@@ -83,14 +82,12 @@ export default function CTA() {
             data-cta-img
             className="pointer-events-none absolute -right-10 bottom-[-40px] hidden w-[340px] opacity-90 mix-blend-luminosity lg:block xl:w-[420px]"
           >
-            <Image
+            <img
               src="/img/hero-beer.svg"
               alt=""
-              width={420}
-              height={420}
               loading="lazy"
-              aria-hidden
-              className="rotate-[-8deg]"
+              aria-hidden="true"
+              className="h-auto w-full rotate-[-8deg]"
             />
             <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-ember via-ember/40 to-transparent mix-blend-darken" />
           </div>

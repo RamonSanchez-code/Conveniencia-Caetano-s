@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import { ArrowUpRight, LayoutGrid } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { usePrefersReducedMotion } from "@/lib/hooks";
@@ -84,13 +83,11 @@ export default function Categories() {
               }`}
             >
               <div className="relative h-64 w-full overflow-hidden sm:h-72 lg:h-full lg:min-h-[300px]">
-                <Image
+                <img
                   src={cat.image}
                   alt={`${cat.name} — ${cat.description}`}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   loading="lazy"
-                  className={`object-cover transition-transform duration-700 ease-out group-hover:scale-110 ${
+                  className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 ${
                     i === 0 ? "mix-blend-screen" : ""
                   }`}
                 />
