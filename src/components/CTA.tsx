@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef, useState } from "react";
 import { ArrowUpRight, CheckCircle2, Loader2, MessageCircle, PhoneCall } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
@@ -53,17 +51,13 @@ export default function CTA() {
     e.preventDefault();
     if (status === "sending") return;
     setStatus("sending");
-    try {
-      const res = await fetch("/api/leads", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone }),
-      });
-      if (!res.ok) throw new Error("request failed");
-      setStatus("sent");
-    } catch {
-      setStatus("error");
+    // Landing estática (Vite, sem backend): com WhatsApp configurado abre a conversa;
+    // caso contrário apenas confirma o envio na prévia.
+    if (brand.whatsappNumber) {
+      const text = encodeURIComponent(`Olá! Sou ${name} (${phone}) e quero receber as ofertas da Caetano's.`);
+      window.open(`https://wa.me/${brand.whatsappNumber}?text=${text}`, "_blank", "noopener");
     }
+    setStatus("sent");
   };
 
   return (
@@ -80,10 +74,10 @@ export default function CTA() {
           <div
             aria-hidden
             data-cta-img
-            className="pointer-events-none absolute -right-10 bottom-[-40px] hidden w-[340px] opacity-90 mix-blend-luminosity lg:block xl:w-[420px]"
+            className="pointer-events-none absolute -right-10 bottom-[-40px] hidden w-[340px] opacity-90 lg:block xl:w-[420px]"
           >
             <img
-              src="/img/hero-beer.svg"
+              src="/img/fotos/adega-geladeira.jpg"
               alt=""
               loading="lazy"
               aria-hidden="true"

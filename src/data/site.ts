@@ -12,14 +12,13 @@ export type Unit = {
   name: string;
   district: string;
   address: string;
+  image: string;
   addressPlaceholder: boolean;
   phone: string;
   phonePlaceholder: boolean;
   whatsappNumber: string | null;
   hours: string;
   hoursPlaceholder: boolean;
-  /** Posição normalizada (0–100) no mapa estilizado ilustrativo. */
-  pos: { x: number; y: number };
   features: { label: string; placeholder: boolean }[];
   mapsUrl: string;
   mapsPlaceholder: boolean;
@@ -58,8 +57,8 @@ export const brand = {
   name: "Caetano's",
   fullName: "Caetano's Conveniência",
   descriptor: "Conveniência & Depósito de Bebidas",
-  unitsCount: 3, // dado real fornecido no briefing
-  city: "Brodowski/SP", // placeholder — cidade não informada
+  unitsCount: 3,
+  city: "Brodowski e Batatais",
   instagram: "@caetanosconveniencias", // placeholder — handle ilustrativo
   instagramUrl: "https://instagram.com/", // placeholder — perfil ilustrativo
   instagramPlaceholder: true,
@@ -72,63 +71,63 @@ export const brand = {
 export const units: Unit[] = [
   {
     id: "u1",
-    name: "Unidade 01 — Centro",
-    district: "Centro",
-    address: "Av. Pres. João Batista de Figueiredo, 1001 — Centro — Batatais/SP",
-    addressPlaceholder: true,
+    image: "/img/fotos/loja-1.jpg",
+    name: "Unidade 01 — Batatais",
+    district: "Batatais",
+    address: "Av. Pres. João Batista de Figueiredo, 1001, Batatais - SP, 14300-000",
+    addressPlaceholder: false,
     phone: "+55 (00) 0000-0000",
     phonePlaceholder: true,
     whatsappNumber: null,
     hours: "Horário de funcionamento: consulte a unidade",
     hoursPlaceholder: true,
-    pos: { x: -20.99055033979744, y: -47.65433383515597},
     features: [
       { label: "Drive-thru", placeholder: true },
       { label: "Estacionamento", placeholder: true },
       { label: "Delivery no bairro", placeholder: true },
     ],
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Caetano%27s+Conveniencia",
-    mapsPlaceholder: true,
+    mapsUrl: "",
+    mapsPlaceholder: false,
   },
   {
     id: "u2",
-    name: "Unidade 02 — Ver. João Luis de Vicente",
-    district: "Ver. João Luis de Vicente",
-    address: "R. Marcos Fabbri, 160 - Ver. Joao Luis de Vicente, Brodowski/SP",
-    addressPlaceholder: true,
+    image: "/img/fotos/adega-geladeira.jpg",
+    name: "Unidade 02 — Brodowski",
+    district: "Brodowski",
+    address: "R. Marcos Fabbri, 160 - Ver. Joao Luis de Vicente, Brodowski - SP, 14340-000",
+    addressPlaceholder: false,
     phone: "+55 (00) 0000-0000",
     phonePlaceholder: true,
     whatsappNumber: null,
     hours: "Horário de funcionamento: consulte a unidade",
     hoursPlaceholder: true,
-    pos: { x: -20.981895517560247, y: -47.64514995193381 },
     features: [
       { label: "Câmara fria lotada", placeholder: false },
       { label: "Atacarejo de bebidas", placeholder: true },
       { label: "Retirada rápida", placeholder: true },
     ],
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Caetano%27s+Conveniencia",
-    mapsPlaceholder: true,
+    mapsUrl: "",
+    mapsPlaceholder: false,
   },
   {
     id: "u3",
-    name: "Unidade 03 — Avenida",
-    district: "Avenida",
-    address: "Av. Dom Luís do Amaral Mouzinho, 1129, Brodowski/SP",
-    addressPlaceholder: true,
+    image: "/img/fotos/u-neon.jpg",
+    name: "Unidade 03 — Brodowski",
+    district: "Brodowski",
+    address: "Av. Dom Luís do Amaral Mouzinho, 1129, Brodowski - SP, 14340-000",
+    addressPlaceholder: false,
     phone: "+55 (00) 0000-0000",
     phonePlaceholder: true,
     whatsappNumber: null,
     hours: "Horário de funcionamento: consulte a unidade",
     hoursPlaceholder: true,
-    pos: { x: 30, y: 70 },
     features: [
       { label: "Gelo e carvão na porta", placeholder: false },
       { label: "Bar ao lado", placeholder: true },
       { label: "Fila rápida", placeholder: true },
     ],
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Caetano%27s+Conveniencia",
-    mapsPlaceholder: true,
+    mapsUrl: "",
+    mapsPlaceholder: false,
   },
 ];
 
@@ -139,7 +138,7 @@ export const categories: Category[] = [
     tag: "sempre no freezer",
     description:
       "Cerveja estupidamente gelada — garrafa, long neck, lata e litrão direto da câmara fria.",
-    image: "/img/hero-beer.svg",
+    image: "/img/fotos/adega-geladeira.jpg",
     items: ["Pilsen", "Puro malte", "Sem álcool", "Artesanais*"],
   },
   {
@@ -148,7 +147,7 @@ export const categories: Category[] = [
     tag: "prateleira premium",
     description:
       "Whisky, vodka, gim, cachaça rum e os coringas do bar — do clássico ao presenteável.",
-    image: "/img/cat-destilados.svg",
+    image: "/img/fotos/u-licor.jpg",
     items: ["Whisky", "Vodka", "Gim", "Vermute & mixers"],
   },
   {
@@ -157,7 +156,7 @@ export const categories: Category[] = [
     tag: "geladeira mega",
     description:
       "Energéticos, refrigerantes e águas de coco no talo — energia pra virar a noite.",
-    image: "/img/cat-gelados.svg",
+    image: "/img/fotos/geladeira-cervejas.jpg",
     items: ["Energéticos", "Refri lata & pet", "Água de coco", "Isotônicos"],
   },
   {
@@ -166,7 +165,7 @@ export const categories: Category[] = [
     tag: "amassados acho que não",
     description:
       "Salgadinho, amendoim, torresmo e charcutaria pra segurar a fome até o fim da resenha.",
-    image: "/img/cat-snacks.svg",
+    image: "/img/fotos/snacks.jpg",
     items: ["Chips", "Amendoim & castanha", "Torresmo", "Bandeijas"],
   },
   {
@@ -175,7 +174,7 @@ export const categories: Category[] = [
     tag: "kit bananeira",
     description:
       "Saca o isopor: gelo, carvão, acendedor e sal grosso. O fogo é por sua conta.",
-    image: "/img/cat-churrasco.svg",
+    image: "/img/fotos/u-grill.jpg",
     items: ["Gelo em cubo", "Carvão", "Acendedor", "Sal grosso"],
   },
   {
@@ -184,7 +183,7 @@ export const categories: Category[] = [
     tag: "pra equilibrar",
     description:
       "Águas de todos os tipos, sucos e energia limpa pra equilibrar a balança no dia seguinte.",
-    image: "/img/cat-hidratacao.svg",
+    image: "/img/fotos/u-coco.jpg",
     items: ["Água com/sem gás", "Sucos naturais", "Vitaminas", "Café expresso*"],
   },
 ];
@@ -196,7 +195,7 @@ export const featuredProducts: FeaturedProduct[] = [
     name: "Caixa cerveja puro malte",
     description: "12 long necks saindo direto da câmara fria pra sua caixa térmica.",
     price: "R$ 59,90",
-    image: "/img/hero-beer.svg",
+    image: "/img/fotos/adega-geladeira.jpg",
   },
   {
     id: "p2",
@@ -204,7 +203,7 @@ export const featuredProducts: FeaturedProduct[] = [
     name: "Whisky 12 anos 750ml",
     description: "O rótulo que transforma a mesa. Garanta o seu antes da gôndola virar.",
     price: "R$ 79,90",
-    image: "/img/cat-destilados.svg",
+    image: "/img/fotos/u-drink-up.jpg",
   },
   {
     id: "p3",
@@ -212,7 +211,7 @@ export const featuredProducts: FeaturedProduct[] = [
     name: "Kit bananeira completo",
     description: "Gelo + carvão + acendedor + sal grosso. O churrasco começa aqui.",
     price: "R$ 34,90",
-    image: "/img/cat-churrasco.svg",
+    image: "/img/fotos/u-grill.jpg",
   },
   {
     id: "p4",
@@ -220,7 +219,7 @@ export const featuredProducts: FeaturedProduct[] = [
     name: "Combo energético 4un.",
     description: "Noite comprida? Combina 4 sabores e garante a virada.",
     price: "R$ 39,90",
-    image: "/img/cat-gelados.svg",
+    image: "/img/fotos/geladeira-cervejas.jpg",
   },
   {
     id: "p5",
@@ -228,7 +227,7 @@ export const featuredProducts: FeaturedProduct[] = [
     name: "Pack água com gás c/6",
     description: "Pra acompanhar, pra intercalar, pra voltar pro jogo.",
     price: "R$ 14,90",
-    image: "/img/cat-hidratacao.svg",
+    image: "/img/fotos/u-coco.jpg",
   },
 ];
 
@@ -239,7 +238,7 @@ export const moments: Moment[] = [
     title: "O churrasco",
     description:
       "Carvão na brasa, caixa térmica cheia e a cerveja sempre gelada. A gente abastece, você recebe os elogios.",
-    image: "/img/moment-churrasco.svg",
+    image: "/img/fotos/u-fogo.jpg",
     chips: ["Carvão", "Gelo", "Cerveja", "Carne tá em casa"],
   },
   {
@@ -248,7 +247,7 @@ export const moments: Moment[] = [
     title: "A virada de festa",
     description:
       "Drinks montados, energia em alta e gelo que não acaba. A playlist é sua, a bebida é nossa.",
-    image: "/img/moment-festa.svg",
+    image: "/img/fotos/u-festa-noite.jpg",
     chips: ["Vodka", "Gin", "Energético", "Gelo em rosquinha*"],
   },
   {
@@ -257,7 +256,7 @@ export const moments: Moment[] = [
     title: "O pit stop da madrugada",
     description:
       "A noite pediu mais? Parada rápida, porta aberta e o estoque que salva qualquer resenha.",
-    image: "/img/moment-noite.svg",
+    image: "/img/fotos/u-cerveja-papo.jpg",
     chips: ["Parada rápida", "Snacks", "Isotônico", "Próxima!"],
   },
 ];
@@ -265,15 +264,15 @@ export const moments: Moment[] = [
 export const marqueeItems = [
   "CERVEJA ESTUPIDAMENTE GELADA",
   "GELO & CARVÃO NA PORTA",
-  "3 UNIDADES PRA TE ATENDER",
+  "3 UNIDADES / 2 CIDADES",
   "DESTILADOS & DRINKS",
   "SNACKS & PETISCOS",
   "ENERGIA PRA VIRADA",
-  "CONVENIÊNCIA DE VERDADE",
+  "CONVENIÊNCIA DE VERDE",
 ];
 
 export const stats = [
-  { value: 3, suffix: "", label: "unidades na cidade", note: false },
+  { value: 3, suffix: "", label: "unidades / 2 cidades", note: false },
   { value: 6, suffix: "", label: "categorias abastecidas", note: false },
   { value: 1500, suffix: "+", label: "itens em estoque*", note: true },
 ];

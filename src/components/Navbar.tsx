@@ -1,5 +1,3 @@
-"use client";
-
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Menu, X, MapPin } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
@@ -153,7 +151,7 @@ export default function Navbar() {
           <div className="space-y-3 px-6 pb-10" data-menu-link>
             <p className="flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-ash">
               <MapPin className="h-3.5 w-3.5 text-ember" />
-              {units.length} unidades — {brand.city.toLowerCase().includes("cidade") ? "endereços ilustrativos" : brand.city}
+              {units.length} unidades / 2 cidades — 2 em Brodowski e 1 em Batatais
             </p>
             <p className="text-[13px] text-ash">
               {brand.instagram}{" "}

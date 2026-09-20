@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef } from "react";
 import { ArrowUpRight, AtSign } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
@@ -8,12 +6,12 @@ import { brand } from "@/data/site";
 import Magnetic from "@/components/Magnetic";
 
 const TILES = [
-  { src: "/img/moment-churrasco.svg", alt: "Churrasco à noite com amigos e cerveja gelada" },
-  { src: "/img/cat-gelados.svg", alt: "Energéticos e refrigerantes com gelo estourando" },
-  { src: "/img/moment-festa.svg", alt: "Brinde em festa neon com copos levantados" },
-  { src: "/img/cat-snacks.svg", alt: "Snacks e petiscos em fundo escuro premium" },
-  { src: "/img/unidade-fachada.svg", alt: "Fachada de loja de conveniência à noite com letreiro laranja" },
-  { src: "/img/moment-noite.svg", alt: "Parada na conveniência de madrugada com caixa de cerveja" },
+  { src: "/img/fotos/churrasqueira.jpg", alt: "Churrasqueira com carvão pronto para acender" },
+  { src: "/img/fotos/gelo.jpg", alt: "Copo com água gelada e cubos de gelo" },
+  { src: "/img/fotos/u-festa-noite.jpg", alt: "Show ao vivo com luzes coloridas à noite" },
+  { src: "/img/fotos/u-coquetel-azul.jpg", alt: "Drink azul com gelo e limão" },
+  { src: "/img/fotos/loja-1.jpg", alt: "Fachada de loja de conveniência à noite" },
+  { src: "/img/fotos/vodka.jpg", alt: "Garrafa de vodka premium" },
 ];
 
 export default function Social() {

@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef } from "react";
 import { ArrowRight, ArrowUpRight, ShoppingBag } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
@@ -83,7 +81,7 @@ export default function Featured() {
           </div>
           <div data-prod-head className="max-w-xs">
             <p className="text-sm leading-relaxed text-ash">
-              Ofertas do momento nas três unidades. Arraste para o lado — no
+              Ofertas do momento nas 3 unidades / 2 cidades. Arraste para o lado — no
               celular é só deslizar.
             </p>
             <p className="mt-2 text-[11px] text-ash/60">
@@ -105,7 +103,7 @@ export default function Featured() {
                 alt={`${product.name} — ${product.description}`}
                 loading="lazy"
                 className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108 ${
-                  i === 0 ? "mix-blend-screen" : ""
+                  ""
                 }`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-night via-night/35 to-transparent" />
@@ -148,7 +146,7 @@ export default function Featured() {
                 <br /> Vem na caetano&apos;s.
               </p>
               <p className="mt-4 max-w-[240px] text-sm font-medium leading-relaxed text-night/75">
-                3 unidades te esperando com a geladeira cheia. Escolha a mais
+                3 unidades / 2 cidades te esperando com a geladeira cheia. Escolha a mais
                 perto e chega mais.
               </p>
             </div>

@@ -24,7 +24,7 @@ export default function Footer() {
           <div>
             <Logo />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-ash">
-              Conveniência &amp; depósito de bebidas com {units.length} unidades.
+              Conveniência &amp; depósito de bebidas com {units.length} unidades / 2 cidades (2 em Brodowski e 1 em Batatais).
               A parada oficial do seu fim de semana, do churrasco e da virada de
               festa.
             </p>

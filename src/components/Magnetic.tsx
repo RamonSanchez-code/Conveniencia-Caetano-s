@@ -1,5 +1,3 @@
-"use client";
-
 import { type ReactNode, useRef, useCallback } from "react";
 import { gsap } from "@/lib/gsap";
 

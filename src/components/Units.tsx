@@ -1,10 +1,8 @@
-"use client";
-
 import { useRef, useState } from "react";
 import { Clock3, MapPin, Navigation, Phone } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { usePrefersReducedMotion } from "@/lib/hooks";
-import { units, type Unit } from "@/data/site";
+import { units } from "@/data/site";
 
 function PlaceholderTag() {
   return (
@@ -14,68 +12,11 @@ function PlaceholderTag() {
   );
 }
 
-function MapPinMarker({
-  unit,
-  active,
-  onActivate,
-  index,
-}: {
-  unit: Unit;
-  active: boolean;
-  onActivate: () => void;
-  index: number;
-}) {
-  return (
-    <g
-      transform={`translate(${unit.pos.x} ${unit.pos.y})`}
-      onPointerEnter={onActivate}
-      onClick={onActivate}
-      className="cursor-pointer"
-      role="button"
-      aria-label={`Selecionar ${unit.name}`}
-      tabIndex={0}
-      onKeyDown={(e) => e.key === "Enter" && onActivate()}
-    >
-      <circle
-        r="3.2"
-        fill="none"
-        stroke={active ? "#ff5c0a" : "rgba(255,92,10,0.5)"}
-        strokeWidth="0.35"
-        className="animate-pin-pulse origin-center"
-        style={{ transformBox: "fill-box" }}
-      />
-      <circle r="1.9" fill={active ? "#ff5c0a" : "#1b1b21"} stroke="#ff5c0a" strokeWidth="0.4" />
-      <text
-        y="1.15"
-        textAnchor="middle"
-        className="pointer-events-none select-none font-sans"
-        fontSize="1.7"
-        fontWeight="700"
-        fill={active ? "#060607" : "#f4f1ea"}
-      >
-        {index + 1}
-      </text>
-      {active && (
-        <text
-          y="-3.4"
-          textAnchor="middle"
-          fontSize="2.4"
-          fontWeight="700"
-          fill="#f4f1ea"
-          className="pointer-events-none select-none font-sans uppercase"
-          style={{ letterSpacing: "0.3px" }}
-        >
-          {unit.district}
-        </text>
-      )}
-    </g>
-  );
-}
-
 export default function Units() {
   const section = useRef<HTMLElement>(null);
   const reduced = usePrefersReducedMotion();
   const [activeId, setActiveId] = useState<string>(units[0].id);
+  const activeUnit = units.find((u) => u.id === activeId) ?? units[0];
 
   useGSAP(
     () => {
@@ -128,7 +69,7 @@ export default function Units() {
         aria-hidden
         className="font-display text-stroke pointer-events-none absolute -top-6 left-0 select-none whitespace-nowrap text-[16vw] leading-none opacity-60"
       >
-        3 UNIDADES
+        3 / 2 CIDADES
       </div>
 
       <div className="relative mx-auto max-w-[1440px] px-5 sm:px-8">
@@ -144,12 +85,14 @@ export default function Units() {
               data-unit-head
               className="font-display text-[clamp(2.4rem,5.6vw,4.8rem)] uppercase leading-[0.95] tracking-tight text-bone"
             >
-              Sempre tem uma <span className="text-ember">perto de você</span>
+              3 unidades / <span className="text-ember">2 cidades</span>
             </h2>
+            <p data-unit-head className="mt-3 text-sm uppercase tracking-[0.2em] text-ash">
+              2 em Brodowski e 1 em Batatais
+            </p>
           </div>
           <p data-unit-head className="max-w-xs text-sm leading-relaxed text-ash">
-            Passe o mouse pelos pontos do mapa para conhecer cada unidade.
-            Localizações ilustrativas nesta prévia.
+            Escolha a unidade nos botões numerados ou nos cartões para ver a localização exata no mapa.
           </p>
         </div>
 
@@ -159,79 +102,32 @@ export default function Units() {
             data-unit-map
             className="relative overflow-hidden rounded-2xl border border-line bg-night"
           >
-            <svg
-              viewBox="0 0 100 80"
-              className="h-[380px] w-full sm:h-[460px] lg:h-full lg:min-h-[540px]"
-              preserveAspectRatio="xMidYMid slice"
-              role="img"
-              aria-label="Mapa ilustrativo com as 3 unidades da Caetano's"
-            >
-              <defs>
-                <pattern id="map-grid" width="5" height="5" patternUnits="userSpaceOnUse">
-                  <path d="M 5 0 L 0 0 0 5" fill="none" stroke="rgba(244,241,234,0.045)" strokeWidth="0.15" />
-                </pattern>
-                <radialGradient id="map-glow" cx="50%" cy="45%" r="60%">
-                  <stop offset="0%" stopColor="rgba(255,92,10,0.10)" />
-                  <stop offset="100%" stopColor="transparent" />
-                </radialGradient>
-              </defs>
+            <iframe
+              key={activeUnit.id}
+              title={`Mapa — ${activeUnit.name}`}
+              src={`https://www.google.com/maps?q=${encodeURIComponent(activeUnit.address)}&hl=pt-BR&z=17&output=embed`}
+              className="h-[380px] w-full border-0 sm:h-[460px] lg:h-full lg:min-h-[540px]"
+              style={{ filter: "invert(0.92) hue-rotate(180deg) saturate(0.7)" }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
 
-              <rect width="100" height="80" fill="#0b0b0d" />
-              <rect width="100" height="80" fill="url(#map-grid)" />
-              <rect width="100" height="80" fill="url(#map-glow)" />
-
-              {/* vias principais (ilustrativas) */}
-              <g stroke="#1f1f26" strokeWidth="1.7" fill="none" strokeLinecap="round">
-                <path d="M-4 34 C 18 30, 34 38, 52 34 S 84 26, 104 30" />
-                <path d="M12 -4 C 18 20, 26 44, 20 84" />
-                <path d="M64 -4 C 60 22, 74 46, 66 84" />
-                <path d="M-4 62 C 24 58, 48 66, 104 58" />
-                <path d="M-4 12 C 30 16, 62 8, 104 14" strokeWidth="1.1" />
-                <path d="M40 -4 C 44 18, 36 52, 44 84" strokeWidth="1.1" />
-              </g>
-              <g stroke="#2a2a33" strokeWidth="0.35" strokeDasharray="2 1.6" fill="none">
-                <path d="M-4 34 C 18 30, 34 38, 52 34 S 84 26, 104 30" />
-                <path d="M12 -4 C 18 20, 26 44, 20 84" />
-                <path d="M64 -4 C 60 22, 74 46, 66 84" />
-              </g>
-
-              {/* blocos */}
-              <g fill="rgba(244,241,234,0.035)">
-                <rect x="16" y="18" width="18" height="10" rx="1" />
-                <rect x="46" y="18" width="12" height="12" rx="1" />
-                <rect x="70" y="20" width="16" height="8" rx="1" />
-                <rect x="24" y="40" width="14" height="14" rx="1" />
-                <rect x="48" y="42" width="12" height="10" rx="1" />
-                <rect x="72" y="40" width="18" height="12" rx="1" />
-                <rect x="16" y="66" width="16" height="8" rx="1" />
-                <rect x="70" y="64" width="16" height="10" rx="1" />
-              </g>
-
-              {/* rótulos de bairro */}
-              <g fontSize="2.1" className="font-sans uppercase" fill="#5b5861" fontWeight="600" style={{ letterSpacing: "0.4px" }}>
-                <text x="46" y="46">Centro</text>
-                <text x="68" y="28">Bairro Norte</text>
-                <text x="30" y="76">Bairro Sul</text>
-              </g>
-
+            <div className="absolute left-4 top-4 flex gap-2">
               {units.map((unit, i) => (
-                <MapPinMarker
+                <button
                   key={unit.id}
-                  unit={unit}
-                  index={i}
-                  active={activeId === unit.id}
-                  onActivate={() => setActiveId(unit.id)}
-                />
+                  type="button"
+                  onClick={() => setActiveId(unit.id)}
+                  aria-label={`Ver ${unit.name} no mapa`}
+                  className={`flex h-9 w-9 items-center justify-center rounded-full border text-sm font-bold transition-colors ${
+                    activeId === unit.id
+                      ? "border-ember bg-ember text-night"
+                      : "border-ember/60 bg-night/85 text-bone hover:bg-ember/20"
+                  }`}
+                >
+                  {i + 1}
+                </button>
               ))}
-            </svg>
-
-            <div className="absolute bottom-4 left-4 rounded-lg border border-line bg-night/80 px-4 py-2.5 backdrop-blur-md">
-              <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-ember">
-                mapa ilustrativo*
-              </p>
-              <p className="text-[11px] text-ash">
-                *localizações de referência — confira o endereço real de cada unidade.
-              </p>
             </div>
           </div>
 
@@ -251,9 +147,9 @@ export default function Units() {
                   }`}
                 >
                   <div className="flex gap-5 p-5 sm:p-6">
-                    <div className="relative hidden h-28 w-24 shrink-0 overflow-hidden rounded-xl sm:block">
+                    <div className="relative h-24 w-20 shrink-0 overflow-hidden rounded-xl sm:h-28 sm:w-24">
                       <img
-                        src="/img/unidade-fachada.svg"
+                        src={unit.image}
                         alt={`Fachada ilustrativa da ${unit.name}`}
                         loading="lazy"
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -315,7 +211,7 @@ export default function Units() {
                           </span>
                         ))}
                         <a
-                          href={unit.mapsUrl}
+                          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(unit.address)}`}
                           target="_blank"
                           rel="noreferrer"
                           className="ml-auto text-[11px] font-bold uppercase tracking-[0.18em] text-ember underline-offset-4 hover:underline"

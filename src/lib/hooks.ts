@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 
 /** Respeita prefers-reduced-motion do sistema. */

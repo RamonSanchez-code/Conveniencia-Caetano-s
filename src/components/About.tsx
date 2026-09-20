@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef } from "react";
 import { Flame } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
@@ -153,7 +151,7 @@ export default function About() {
           >
             <img
               data-about-img
-              src="/img/moment-noite.svg"
+              src="/img/fotos/u-cerveja-papo.jpg"
               alt="Amigos saindo de uma loja de conveniência à noite carregando bebidas geladas"
               className="h-full w-full object-cover will-change-transform"
             />

@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useRef, useState } from "react";
 import { ArrowDown, ArrowUpRight, MapPin } from "lucide-react";
 import { gsap } from "@/lib/gsap";
@@ -135,10 +133,10 @@ export default function Hero() {
         <div data-hero-tilt className="relative will-change-transform [transform-style:preserve-3d]">
           <div
             data-float-soft
-            className="hero-img-mask relative h-[44svh] w-[86vw] mix-blend-screen sm:h-[56svh] sm:w-[70vw] lg:h-[78vh] lg:w-[46vw]"
+            className="hero-img-mask relative h-[44svh] w-[86vw] sm:h-[56svh] sm:w-[70vw] lg:h-[78vh] lg:w-[46vw]"
           >
             <img
-              src="/img/hero-beer.svg"
+              src="/img/fotos/adega-geladeira.jpg"
               alt="Cervejas e garrafas estupidamente geladas com splash dourado, sobre fundo preto"
               className="h-full w-full object-contain drop-shadow-[0_40px_80px_rgba(255,92,10,0.25)]"
             />
@@ -173,13 +171,11 @@ export default function Hero() {
       >
         <div className="rounded-xl border border-ember/50 bg-ember/10 px-5 py-3 backdrop-blur-md">
           <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-ember">3 unidades</p>
-          <p className="font-display text-2xl uppercase leading-none text-bone">na cidade</p>
+          <p className="font-display text-2xl uppercase leading-none text-bone">/ 2 cidades</p>
         </div>
       </div>
 
-      {/* Conteúdo */}
       <div
-        data-hero-content
         className="relative z-20 mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-end px-5 pb-24 pt-32 sm:px-8 lg:justify-center lg:pb-40"
       >
         <p

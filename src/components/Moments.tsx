@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef } from "react";
 import { Clock3 } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";

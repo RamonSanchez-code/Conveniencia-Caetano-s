@@ -1,5 +1,3 @@
-"use client";
-
 import { type ReactNode, useEffect } from "react";
 import Lenis from "lenis";
 import { gsap, ScrollTrigger } from "@/lib/gsap";

@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef } from "react";
 import { ArrowUpRight, LayoutGrid } from "lucide-react";
 import { gsap, useGSAP } from "@/lib/gsap";
@@ -88,7 +86,7 @@ export default function Categories() {
                   alt={`${cat.name} — ${cat.description}`}
                   loading="lazy"
                   className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 ${
-                    i === 0 ? "mix-blend-screen" : ""
+                    ""
                   }`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-night via-night/40 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
